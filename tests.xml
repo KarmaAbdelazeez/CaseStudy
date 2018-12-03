@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Suite" thread-count="20" parallel="tests">
+  
+
+  <test thread-count="10" verbose="2" name="Nisnasstest">
+      <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestAutomationTasks.NisnassTest"/>
+    </classes>
+  </test>  <!-- Default test -->
+ 
+<test thread-count="10" verbose="2" name="Ounass">
+      <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestAutomationTasks.OunassTest"/>
+    </classes>
+  </test>   <!-- Default test -->
+
+
+
+</suite> <!-- Default suite -->

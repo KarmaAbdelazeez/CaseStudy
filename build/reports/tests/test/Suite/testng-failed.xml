@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="20" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="Ounass(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestAutomationTasks.NisnassTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="suiteSetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestAutomationTasks.NisnassTest -->
+      <class name="TestAutomationTasks.OunassTest">
+        <methods>
+          <include name="VerifyAlanuiFilter"/>
+          <include name="loginWithFacebook"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestAutomationTasks.OunassTest -->
+    </classes>
+  </test> <!-- Ounass(failed) -->
+  <test name="Nisnasstest(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestAutomationTasks.NisnassTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="suiteSetUp"/>
+          <include name="AddToBag"/>
+          <include name="invalidSignIn"/>
+          <include name="tearDown"/>
+          <include name="invalidSignUp"/>
+          <include name="SignUpandEdit"/>
+        </methods>
+      </class> <!-- TestAutomationTasks.NisnassTest -->
+      <class name="TestAutomationTasks.OunassTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestAutomationTasks.OunassTest -->
+    </classes>
+  </test> <!-- Nisnasstest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

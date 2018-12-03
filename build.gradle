@@ -1,0 +1,37 @@
+apply plugin: 'java-library'
+apply plugin: 'eclipse'
+repositories {
+    jcenter()
+}
+
+dependencies {
+    api 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.google.guava:guava:23.0'
+    //compile 'junit:junit:4.12'
+    compile 'org.seleniumhq.selenium:selenium-server-standalone:2.53.0'
+    compile group: 'org.testng', name: 'testng', version: '6.9.10'
+    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.2.5'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '2.44.0'
+     
+    
+}
+
+test {
+    useTestNG(){
+       useDefaultListeners = true
+       suites 'tests.xml'
+    }	
+    
+}
+
+test { 
+     afterSuite { suite, result -> 
+         result.exception?.printStackTrace() 
+     } 
+     
+     tasks.withType(JavaExec) {
+    if (System.getProperty('DEBUG', 'false') == 'true') {
+        jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+    }
+}
+} 
